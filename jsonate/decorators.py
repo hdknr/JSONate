@@ -38,17 +38,6 @@ def jsonate_request(func):
                 return form.errors
     """
     @wraps(func)
-<<<<<<< HEAD
-    def wrapper(*args, **kwargs):
-        '''  args[0] : must be  a WSGIRequest 
-        '''
-        resp = func(*args, **kwargs)
-        if isinstance(resp, HttpResponse):
-            return resp
-        else:
-            return JsonateResponse(resp,request=args[0] if len(args)>0 else None )
-    return wrapper
-=======
     def wrapper(request, *args, **kwargs):
         resp = func(request, *args, **kwargs)
         if isinstance(resp, HttpResponse):
@@ -58,4 +47,3 @@ def jsonate_request(func):
                 return JsonateResponse(resp, jsonp_callback=request.GET['callback'])
             return JsonateResponse(resp)
     return wrapper
->>>>>>> 7b1a191b3e0e15929054cc659d2b24f02d4a4b2e
