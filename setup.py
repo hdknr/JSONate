@@ -19,8 +19,6 @@ setup(
         "django",
     ],
     
-    package_dir = {'': 'src'},
-
     packages=[
         'jsonate', 
         'jsonate.templatetags',
