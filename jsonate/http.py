@@ -1,5 +1,6 @@
 from django.http import HttpResponse
-from jsonate import jsonate
+#from jsonate import jsonate
+from jsonate.utils import jsonate
 
 class JsonateResponse(HttpResponse):
     """
